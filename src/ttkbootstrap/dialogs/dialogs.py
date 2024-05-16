@@ -563,7 +563,7 @@ class DatePickerDialog:
 
     """
 
-    locale.setlocale(locale.LC_ALL, locale.setlocale(locale.LC_TIME, ""))
+    #locale.setlocale(locale.LC_ALL, locale.setlocale(locale.LC_TIME, ""))
 
     def __init__(
         self,
