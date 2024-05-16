@@ -8,7 +8,6 @@
 
 import calendar
 import textwrap
-import locale
 from datetime import datetime
 from tkinter import font
 import ttkbootstrap as ttk
