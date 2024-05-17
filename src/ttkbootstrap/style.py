@@ -13,6 +13,7 @@ from ttkbootstrap.publisher import Publisher, Channel
 from ttkbootstrap import utility as util
 from ttkbootstrap import colorutils
 from PIL import ImageColor
+from os import getcwd
 
 
 try:
@@ -4113,12 +4114,14 @@ class StyleBuilderTTK:
         if winsys == "win32":
             # Windows font
             try:
-                fnt = ImageFont.truetype("seguisym.ttf", 120)
-                font_offset = -20
+                #fnt = ImageFont.truetype("seguisym.ttf", 120)
+                #font_offset = -20
+                fnt = ImageFont.truetype(getcwd() + "FreeSerif.ttf", 130)
+                font_offset = 10
             except OSError:
                 try:
                     # this should be available on most Linux distros
-                    fnt = ImageFont.truetype("FreeSerif.ttf", 130)
+                    fnt = ImageFont.truetype(getcwd() + "FreeSerif.ttf", 130)
                     font_offset = 10
                 except:
                     try:
