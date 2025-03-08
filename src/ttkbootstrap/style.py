@@ -14,6 +14,7 @@ from ttkbootstrap import utility as util
 from ttkbootstrap import colorutils
 from PIL import ImageColor
 from os import getcwd
+from os.path import join
 
 
 try:
@@ -4110,18 +4111,20 @@ class StyleBuilderTTK:
         """
         # set platform specific checkfont
         winsys = self.style.tk.call("tk", "windowingsystem")
-        indicator = "✓"
+        indicator = "√"
+        font_path = join(getcwd(),"fonts","Comfortaa","Comfortaa-Bold.ttf")
         if winsys == "win32":
             # Windows font
+            
             try:
                 #fnt = ImageFont.truetype("seguisym.ttf", 120)
                 #font_offset = -20
-                fnt = ImageFont.truetype(getcwd() + "FreeSerif.ttf", 130)
+                fnt = ImageFont.truetype(font_path, 130)
                 font_offset = 10
             except OSError:
                 try:
                     # this should be available on most Linux distros
-                    fnt = ImageFont.truetype(getcwd() + "FreeSerif.ttf", 130)
+                    fnt = ImageFont.truetype(font_path, 130)
                     font_offset = 10
                 except:
                     try:
@@ -4143,7 +4146,7 @@ class StyleBuilderTTK:
             # Linux fonts
             try:
                 # this should be available on most Linux distros
-                fnt = ImageFont.truetype("FreeSerif.ttf", 130)
+                fnt = ImageFont.truetype(font_path, 130)
                 font_offset = 10
             except:
                 try:
